@@ -12,6 +12,29 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+       logo: require('./assets/logo.png')
+    }
+  },
+  metaInfo() {
+    return {
+      meta: [
+          // Twitter Card
+          {name: 'twitter:card', content: 'summary'},
+          {name: 'twitter:title', content: 'Vue Social Cards Example'},
+          {name: 'twitter:description', content: 'Vue sample site showing off Twitter and Facebook Cards.'},
+          // image must be an absolute path
+          {name: 'twitter:image', content: this.logo},
+          // Facebook OpenGraph
+          {property: 'og:title', content: 'Vue Social Cards Example'},
+          {property: 'og:site_name', content: 'Vue Example'},
+          {property: 'og:type', content: 'website'},
+          {property: 'og:image', content:  this.logo},
+          {property: 'og:description', content: 'Vue sample site showing off Twitter and Facebook Cards.'}
+      ]
+    }
   }
 }
 </script>
